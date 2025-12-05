@@ -13,15 +13,6 @@ const userSchema = new Schema<IUser>({
   email: {
     type: String,
     required: true,
-    lowercase: true,
-    trim: true,
-    validate: {
-      validator: function (email) {
-        // More comprehensive email validation
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      },
-      message: "Please provide a valid email address",
-    },
   },
   password: { type: String, required: true },
 });
